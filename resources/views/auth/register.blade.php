@@ -4,6 +4,11 @@
             <x-jet-authentication-card-logo />
         </x-slot>
 
+        <x-slot name="title">
+            <h3 class="text-gray-900 text-4xl font-bold tracking-tight">Create a new account</h3>
+            <div>Or <a class="text-teal-500" href="{{ route('login') }}">sign in to your account</a></div>
+        </x-slot>
+
         <x-jet-validation-errors class="mb-4" />
 
         <form method="POST" action="{{ route('register') }}">
@@ -29,14 +34,15 @@
                 <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
 
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-jet-button class="ml-4">
+            <div class="mt-4">
+                <x-jet-button class="bg-teal-700 hover:bg-teal-500 focus:bg-teal-500 active:bg-teal-500 block w-full">
                     {{ __('Register') }}
                 </x-jet-button>
+            </div>
+            <div class="mt-2">
+                <a class="text-sm text-gray-600 hover:text-gray-900 no-underline font-bold" href="{{ route('login') }}">
+                    {{ __('Already registered?') }}
+                </a>
             </div>
         </form>
     </x-jet-authentication-card>
