@@ -28,7 +28,7 @@ class EpisodesController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.episodes.create');
     }
 
     /**

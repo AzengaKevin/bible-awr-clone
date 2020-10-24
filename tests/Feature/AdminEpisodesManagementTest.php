@@ -39,4 +39,23 @@ class AdminEpisodesManagementTest extends TestCase
 
         $response->assertViewHas('episodes');
     }
+
+    /**
+     * @test
+     * 
+     * @group episode
+     */
+    public function admin_can_view_episode_create_page()
+    {
+        //Arrange
+        $this->withoutExceptionHandling();
+
+        //Act
+        $response = $this->get('/admin/episodes/create');
+
+        //Assert
+        $response->assertOk();
+
+        $response->assertViewIs('admin.episodes.create');
+    }
 }

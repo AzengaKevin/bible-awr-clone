@@ -5,6 +5,29 @@
         </h2>
     </x-slot>
 
-    <div>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                <div class="p-6 bg-white border-b border-gray-200">
+
+                    <div>
+                        <a class="inline-flex items-center px-4 py-2 bg-teal-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-teal-700 active:bg-teal-900 focus:outline-none focus:border-teal-900 focus:shadow-outline disabled:opacity-25 transition ease-in-out duration-150" href="{{ route('admin.episodes.create') }}">
+                            Add Episode
+                        </a>
+                    </div>
+
+                    <div class="mt-6 text-gray-500">
+                        <!--@TODO Show Episodes -->
+                    </div>
+                </div>
+
+                <div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-2">
+                </div>
+
+            </div>
+        </div>
     </div>
+
+    <x-slot name="scripts"></x-slot>
+    
 </x-app-layout>
