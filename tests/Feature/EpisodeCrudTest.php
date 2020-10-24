@@ -16,7 +16,7 @@ class EpisodeCrudTest extends TestCase
      * 
      * @group episode
      */
-    public function admin_can_add_an_episode(){
+    public function episode_can_be_created(){
 
         //Arrange
         
@@ -32,6 +32,60 @@ class EpisodeCrudTest extends TestCase
 
         $this->assertNotNull(Episode::first()->author);
 
-
     }
+
+    /**
+     * @test
+     * 
+     * @group episode
+     */
+    public function episode_title_is_required()
+    {
+        //Arrange
+        $this->expectException(\Exception::class);
+        //Act
+        Episode::factory()->create(['title' => null]);
+
+        //Assert
+    }
+
+    /**
+     * @test
+     * 
+     * @group episode
+     */
+    public function episode_body_is_required()
+    {
+        //Arrange
+        $this->expectException(\Exception::class);
+        //Act
+        Episode::factory()->create(['body' => null]);
+
+        //Assert
+    }
+    
+    /**
+     * @test
+     * 
+     * @group episode
+     */
+    public function episode_audio_url_is_required()
+    {
+        $this->expectException(\Exception::class);
+
+        Episode::factory()->create(['audio_url' => null]);
+    }
+
+    /**
+     * @test
+     * 
+     * @group episode
+     */
+    public function episode_video_url_is_required()
+    {
+        $this->expectException(\Exception::class);
+
+        Episode::factory()->create(['video_url' => null]);
+    }
+
 }
